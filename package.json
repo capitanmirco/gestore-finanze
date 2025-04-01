@@ -45,6 +45,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.5",
     "@electron/remote": "^2.1.2",
+    "angular-oauth2-oidc": "^19.0.0",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.8",
     "electron-squirrel-startup": "^1.0.1",

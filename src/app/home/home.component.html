@@ -1,0 +1,12 @@
+<div class="home-container">
+    <h1>Welcome to the Home Page</h1>
+
+    <div *ngIf="user; else noUser">
+        <p>Hello, {{ user.name }}!</p>
+        <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+
+    <ng-template #noUser>
+        <p>Please log in to access the home page.</p>
+    </ng-template>
+</div>
