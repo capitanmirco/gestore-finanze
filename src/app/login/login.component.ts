@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth/auth.service'; // Importa il servizio di autenticazione
 
 @Component({
   selector: 'app-login',
@@ -8,10 +7,7 @@ import { AuthService } from '../auth/auth.service'; // Importa il servizio di au
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
-  login() {
-    // Avvia il flusso di login quando l'utente clicca sul pulsante
-    this.authService.login();
-  }
+
 }

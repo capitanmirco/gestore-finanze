@@ -1,12 +1,44 @@
 <div class="home-container">
-    <h1>Welcome to the Home Page</h1>
+    <mat-card class="dashboard">
+        <mat-card-title>Dashboard Finanze Personali</mat-card-title>
 
-    <div *ngIf="user; else noUser">
-        <p>Hello, {{ user.name }}!</p>
-        <button class="logout-button" (click)="logout()">Logout</button>
-    </div>
+        <div class="financial-summary">
+            <mat-card class="summary-box" *ngFor="let item of financialSummary">
+                <mat-card-header>
+                    <mat-card-title>{{ item.title }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ item.value | currency }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
 
-    <ng-template #noUser>
-        <p>Please log in to access the home page.</p>
-    </ng-template>
+        <div class="charts">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Entrate Mensili</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <!--<highcharts-chart
+                            [Highcharts]="Highcharts"
+                            [options]="incomeChartOptions"
+                            style="width: 100%; height: 400px; display: block;">
+                    </highcharts-chart>-->
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Uscite Mensili</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <!--<highcharts-chart
+                            [Highcharts]="Highcharts"
+                            [options]="expenseChartOptions"
+                            style="width: 100%; height: 400px; display: block;">
+                    </highcharts-chart>-->
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-card>
 </div>

@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { AuthGuard } from './auth/auth.guard'; // Protezione per la home
+import { WelcomeComponent } from './shared/welcome/welcome.component';
+import {LoginComponent} from "./login/login.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent }, // Pagina di login
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }, // Pagina di home protetta
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Reindirizza alla home di default
-  { path: '**', redirectTo: '/home' } // Gestisce percorsi non validi
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'links', component: WelcomeComponent }, // Placeholder per la pagina dei link
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '**', redirectTo: '/welcome' }
 ];
 
 @NgModule({
